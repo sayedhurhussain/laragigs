@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Models\Listing;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,24 +39,41 @@ Route::get('/search', function (Request $request) {
     // return view('welcome');
 });
 
+// ~ Return the data from the web file
+// Route::get('/', function () {
+//     return view('listings', [
+//         'heading' => 'Latest Listing',
+//         'listings' => [
+//             [
+//             'id' => 1,
+//             'title' => 'listing One',
+//             'description' => 'But they are not helping me to format Laravel Blade Codes
+//             [blade.php files]. I mean they are not auto indenting the codes as I expected.
+//             But I have seen blade codes online which are well indented in visual studio Code IDE.',
+//             ],
+//             [
+//             'id' => 2,
+//             'title' => 'listing Two',
+//             'description' => 'But they are not helping me to format Laravel Blade Codes
+//             [blade.php files]. I mean they are not auto indenting the codes as I expected.
+//             But I have seen blade codes online which are well indented in visual studio Code IDE.',
+//             ]
+//         ]
+//     ]); 
+// });
+
+
+// All Listings
 Route::get('/', function () {
     return view('listings', [
         'heading' => 'Latest Listing',
-        'listings' => [
-            [
-            'id' => 1,
-            'title' => 'listing One',
-            'description' => 'But they are not helping me to format Laravel Blade Codes
-            [blade.php files]. I mean they are not auto indenting the codes as I expected.
-            But I have seen blade codes online which are well indented in visual studio Code IDE.',
-            ],
-            [
-            'id' => 2,
-            'title' => 'listing Two',
-            'description' => 'But they are not helping me to format Laravel Blade Codes
-            [blade.php files]. I mean they are not auto indenting the codes as I expected.
-            But I have seen blade codes online which are well indented in visual studio Code IDE.',
-            ]
-        ]
+        'listings' => Listing::all()
     ]); 
 });
+
+// Single Listing
+Route::get('/listings/{id}', function($id) {
+    return view('listing', [
+        'listing' => Listing::find($id)
+    ]);
+ });
