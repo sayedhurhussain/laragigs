@@ -1,3 +1,7 @@
+@extends('layout')
+
+@section('content')
+
 <h1>{{$heading}}</h1>
 
 {{-- * php code in blade --- --}}
@@ -11,7 +15,7 @@
 <p>No listing found</p> --}}
 
 @unless (count($listings) == 0)
-
+ 
 @foreach($listings as $listing)
     <h2>
         {{$listing['title']}}
@@ -26,3 +30,5 @@
 @else
     <p>No listing found</p>
 @endunless
+
+@endsection
