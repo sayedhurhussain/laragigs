@@ -22,9 +22,12 @@ class ListingController extends Controller
         // dd(request()->tag);
         // dd(request('tag'));
         return view('listings.index', [
-            // Sorted by the latest
             // 'listings' => Listing::Latest()->get()
-            'listings' => Listing::latest()->filter(request(['tag', 'search']))->get()
+            // Sorted by the latest
+            // simplePaginate show only previous and next page
+            // 'listings' => Listing::latest()->filter(request(['tag', 'search']))->simplePaginate(6)
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(6)
+
         ]); 
     }
 
