@@ -9,6 +9,8 @@ class Listing extends Model
 {
     use HasFactory;
 
+ 
+
     public function scopeFilter($query, array $filters) {
         // dd($filters['tag']);
         // if this is not false

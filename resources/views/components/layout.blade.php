@@ -62,5 +62,7 @@
                 >Post Job</a
             >
         </footer>
+
+        <x-flash-mesage/>
     </body>
 </html>
