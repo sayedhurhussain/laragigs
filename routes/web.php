@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-
 use App\Models\Listing;
+use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,15 @@ use App\Models\Listing;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// TODO: Common Resource Routes
+// index - Show all listings 
+// show - Show single listing
+// create - Show from to create new Listing
+// store - Store new Listing
+// edit - Show from to edit Listing
+// update - Update listing
+// destroy - Delete listing
 
 Route::get('/', function () {
     return view('welcome');
@@ -63,15 +73,15 @@ Route::get('/search', function (Request $request) {
 // });
 
 
-// All Listings
-Route::get('/', function () {
-    return view('listings', [
-        'heading' => 'Latest Listing',
-        'listings' => Listing::all()
-    ]); 
-});
+// ^ All Listings
+// Route::get('/', function () {
+//     return view('listings', [
+//         // 'heading' => 'Latest Listing',
+//         'listings' => Listing::all()
+//     ]); 
+// });
 
-// Single Listing
+// ^ Single Listing But error in not page found
 // Route::get('/listings/{id}', function($id) {
 //     return view('listing', [
 //         'listing' => Listing::find($id)
@@ -91,9 +101,16 @@ Route::get('/', function () {
 //     }
 //  });
 
- // 2nd method Single Listing
- Route::get('/listings/{listing}', function(Listing $listing) {
-        return view('listing', [
-            'listing' => $listing
-        ]);
- });
+ // ^ 2nd method Single Listing
+//  Route::get('/listings/{listing}', function(Listing $listing) {
+//         return view('listing', [
+//             'listing' => $listing
+//         ]);
+//  });
+
+// All Listings Route
+Route::get('/', [ListingController::class, 'index']);
+// Single Listing Route
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
+
+

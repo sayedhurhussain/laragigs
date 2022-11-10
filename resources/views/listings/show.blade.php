@@ -1,7 +1,5 @@
-@extends('layout')
-
-@section('content')
-@include('partials._search')
+<x-layout>
+{{-- @include('partials._search') --}}
 {{-- <h2>
     {{$listing['title']}}
 </h2>
@@ -57,4 +55,4 @@
     </div>
 </x-card>
 </div>
-@endsection
+</x-layout>
