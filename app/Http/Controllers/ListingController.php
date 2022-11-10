@@ -22,7 +22,7 @@ class ListingController extends Controller
         return view('listings.index', [
             // Sorted by the latest
             // 'listings' => Listing::Latest()->get()
-            'listings' => Listing::latest()->filter(request(['tag']))->get()
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->get()
         ]); 
     }
 
