@@ -110,9 +110,15 @@ Route::get('/search', function (Request $request) {
 
 // All Listings Route
 Route::get('/', [ListingController::class, 'index']);
+
 // Show Create From Route
 Route::get('/listings/create', [ListingController::class, 'create']);
+
 // Store Listing Data Route
 Route::post('/listings', [ListingController::class, 'store']);
+
+// Show Edit form Route
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+
 // Single Listing Route
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
