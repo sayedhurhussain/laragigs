@@ -95,7 +95,7 @@ class ListingController extends Controller
      */
     public function edit(Listing $listing)
     {
-        dd($listing->title);
+        // dd($listing->title);
         return view('listings.edit', ['listing' => $listing]);
     }
 
