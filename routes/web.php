@@ -120,5 +120,8 @@ Route::post('/listings', [ListingController::class, 'store']);
 // Show Edit form Route
 Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 
+// Edit Submit to Update Route
+Route::put('/listings/{listing}', [ListingController::class, 'update']);
+
 // Single Listing Route
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
