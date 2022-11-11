@@ -81,7 +81,7 @@ Route::get('/search', function (Request $request) {
 //     ]); 
 // });
 
-// ^ Single Listing But error in not page found
+// ^ Single Listing But error if not page found
 // Route::get('/listings/{id}', function($id) {
 //     return view('listing', [
 //         'listing' => Listing::find($id)
@@ -122,6 +122,9 @@ Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 
 // Edit Submit to Update Route
 Route::put('/listings/{listing}', [ListingController::class, 'update']);
+
+// Delete Listing Route
+Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
 
 // Single Listing Route
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
