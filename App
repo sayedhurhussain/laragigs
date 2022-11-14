@@ -1,0 +1,15 @@
+[90m= [39m[34;4mApp\Models\Listing[39;24m {#4436
+    [34mid[39m: [35m1[39m,
+    [34muser_id[39m: [35m1[39m,
+    [34mtitle[39m: "[32mOmnis reiciendis sapiente qui vel.[39m",
+    [34mlogo[39m: [36mnull[39m,
+    [34mtags[39m: "[32mlaravel, api, backend[39m",
+    [34mcompany[39m: "[32mKertzmann, Langworth and Gerlach[39m",
+    [34mlocation[39m: "[32mNorth Marge[39m",
+    [34memail[39m: "[32mcristopher.wilkinson@wisoky.com[39m",
+    [34mwebsite[39m: "[32mhttp://ernser.com/voluptas-voluptatem-eligendi-mollitia[39m",
+    [34mdescription[39m: "[32mQuibusdam eaque consectetur cumque ratione. Nam accusamus asperiores aut molestiae natus quia quisquam. Nobis quia quis illo voluptatem rerum fugiat. Animi ipsam voluptatem cum fugit optio libero animi. Eligendi reprehenderit qui et dolore porro repudiandae voluptas. Illo magni voluptatum nisi odit sint.[39m",
+    [34mcreated_at[39m: "[32m2022-11-14 09:22:45[39m",
+    [34mupdated_at[39m: "[32m2022-11-14 09:22:45[39m",
+  }
+
